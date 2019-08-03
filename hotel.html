@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script/scripts.js"></script>
+    <title>OurLittleTown</title>
+</head>
+
+<body>
+    <nav
+        class=" font-weight-bold d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h1 class="title my-0 mr-md-auto font-weight-normal">Our Little Town</h1>
+        <div class="my-2 my-md-0 mr-md ">
+            <a class="p-2 text-info" href="index.html">Home</a>
+            <a class="p-2 text-info" href="rentacar.html">Rent a Car</a>
+        </div>
+    </nav>
+    <Main class="row no-gutters">
+        <section class="container col-md-5 offset-md-4 formBorder">
+            <h1 class="mb-3 text-center">HOTEL</h1>
+            <form class="form " autocomplete="off" method="GET">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label for="firstName">Check-in Date</label>
+                            <input type="date" class="form-control" id="firstName" value="" required>
+                            <div class="invalid-feedback">
+                                Check-in Date is required
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label for="numOfNights">Number of Nights</label>
+                            <input type="number" class="form-control" id="numOfNights" required>
+                            <div class="invalid-feedback">
+                                Number of nights is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="roomType"> Room Type</label>
+                            <select class="custom-select d-block w-100" id="roomType" name="roomType">
+                                <option value="QUEEN"> Queen $150</option>
+                                <option value="KING"> King $150</option>
+                                <option value="KINGSUITE"> King Suite $190</option>
+                                <option value="TWOBED">2-Bedroom Suite $210</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select Room Type
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="numOfAdults"> Adults </label>
+                            <input type="text" class="form-control" id="numOfAdults" required>
+                            <div class="invalid-feedback">
+                                Number of adults is required
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="numOfKids"> Kids </label>
+                            <input type="text" class="form-control" id="numOfKids" required>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Breakfast </h4>
+                    <p>( $6.96/adult-$3.95/child)</p>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="breakfastIncluded" name="customRadioInline1"
+                            class="custom-control-input" value="true">
+                        <label class="custom-control-label" for="breakfastIncluded">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="noBreakfast" name="customRadioInline1" class="custom-control-input" value="false">
+                        <label class="custom-control-label" for="noBreakfast">No</label>
+                    </div>
+                    <hr class="mb-4">
+
+                    <h4 class="mb-3">Discount</h4>
+                    <p>Please select any applicable discount</p>
+
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input id="noneDiscount" name="discount" type="radio" class="custom-control-input" checked
+                                required>
+                            <label class="custom-control-label" for="noneDiscount">None</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="aaaDiscount" name="discount" type="radio" class="custom-control-input" value="AAA">
+                            <label class="custom-control-label" for="aaaDiscount">AAA</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="seniorDiscount" name="discount" type="radio" class="custom-control-input" value="Senior"
+                                required>
+                            <label class="custom-control-label" for="seniorDiscount">Senior</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="militaryDiscount" name="discount" type="radio" class="custom-control-input" value="Military">
+                            <label class="custom-control-label" for="militaryDiscount">Military</label>
+                        </div>
+                    </div>
+                    <button id="totalPrice" class="btn btn btn-outline-primary" type="submit">Get Estimate</button>
+                    <hr class="mb-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label for="checkinDate">Check-in Date</label>
+                            <input type="text" class="form-control" id="checkinDate" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label for="checkOutDate">Check Out </label>
+                            <input type="text" class="form-control" id="checkOutDate" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label for="roomTotal" class="col-sm-2 col-form-label">Room Charge</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="roomTotal">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="discountTotal" class="col-sm-2 col-form-label">Discount</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="discountTotal">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="taxTotal" class="col-sm-2 col-form-label">Tax</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="taxTotal">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="finalTotal" class="col-sm-2 col-form-label">Total </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="finalTotal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </Main>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -104,7 +104,7 @@ function getDiscount(roomCostBeforeDiscount, discountCode) {
 function getEstimate() {
 
     let roomType = document.getElementById("roomType").value
-    roomType = parseFloat(roomType);
+
     let numOfNights = document.getElementById("numOfNights").value
     numOfNights = parseFloat(numOfNights);
     let numOfAdults = document.getElementById("numOfAdults").value
@@ -113,7 +113,7 @@ function getEstimate() {
     numOfKids = parseFloat(numOfKids);
 
     let breakfastIncluded = false;
-    if (document.getElementById("Yes").checked) {
+    if (document.getElementById("breakfastIncluded").checked) {
         breakfastIncluded=true;
     }
         
@@ -127,7 +127,7 @@ function getEstimate() {
     {
         discounts = "Senior";
     }
-    else if (ddocument.getElementById("militaryDiscount").checked)
+    else if (document.getElementById("militaryDiscount").checked)
     {
         discounts = "Military";
     }
@@ -135,30 +135,39 @@ function getEstimate() {
     let roomCharge = getRoomCost(roomType, 0, numOfNights)
     //if breakfast inluded apply price 
 
+    let breakfastCost = 0;
     if (breakfastIncluded == true) {
-        roomCharge = roomCharge + getBreakfastCost(numOfAdults, numOfKids, numOfNights, discounts)
+        breakfastCost = getBreakfastCost(numOfAdults, numOfKids, numOfNights, discounts)
     }
-    const firstCharge = document.getElementById("roomTotal");
-    firstCharge.value = roomCharge.toFixed(2);
+
 
     //Discounts if any
 
     let discountTotal = getDiscount(roomCharge, discounts);
+    if (discounts == "Senior")
+    {
+        breakfastCost = 0;
+    }
+
+    const firstCharge = document.getElementById("roomTotal");
+    let subtotal = roomCharge + breakfastCost
+    firstCharge.value = subtotal.toFixed(2);
+
     const discountsOutput = document.getElementById("discountTotal");
-    discountsOutput.value = discountTotal.toFixed(2);
-
-
+    discountsOutput.value = discountTotal.toFixed(2);    
+    
+    let total = subtotal - discountTotal
     //Tax 
-    let total = roomCharge - discountTotal
+
     let tax = total * 0.12
     const taxes = document.getElementById("taxTotal");
     taxes.value = tax.toFixed(2);
 
     //Total 
 
-    total = roomCharge - discountTotal + tax
+    total = subtotal + tax
     const totalprice = document.getElementById("finalTotal");
-    totalprice.value = totalprice.toFixed(2);
+    totalprice.value = total.toFixed(2);
 
 }
 window.onload = function () {

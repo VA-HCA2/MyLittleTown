@@ -74,27 +74,41 @@ function getDiscount ( roomCostBeforeDiscount,discountCode)
    {
     return roomCostBeforeDiscount*0.2;
    }
-
+// If any other code don't apply any discount
    else {
    return 0;
    }
 }
-
-function getEstimate(){
+function  getEstimate()
+{
  
    let roomType=document.getElementById("roomType").value
+   roomType=parseFloat(roomType);
    let numOfNights=document.getElementById("numOfNights").value
+   numOfNights=parseFloat(numOfNights);
    let numOfAdults=document.getElementById("numOfAdults").value
+   numOfAdults=parseFloat(numOfAdults);
    let numOfKids=document.getElementById("numOfKids").value
+   numOfKids=parseFloat(numOfKids);
 
 
    let roomCharge=getRoomCost(roomType,0,numOfNights)
+  
+   //if breakfast inluded apply price 
    let breakfastIncluded; 
    if(breakfastIncluded==true)
    {
        roomCharge=roomCharge+getBreakfastCost(numOfAdults, numOfKids, numOfNights, discounts)
    }
-    poner en el input 
+    // Put the result back in the UI
+
+
+   }
+
+}
+
+
+/*
 
    let discountTotal=getDiscount ( roomCharge,discount);
    poner en input 
@@ -106,7 +120,11 @@ function getEstimate(){
   let tax= total*0.12
   total=roomCharge-discountTotal+tax
 
-}
+  */
+
+
+
+
 
 
 

@@ -114,24 +114,21 @@ function getEstimate() {
 
     let breakfastIncluded = false;
     if (document.getElementById("breakfastIncluded").checked) {
-        breakfastIncluded=true;
+        breakfastIncluded = true;
     }
-        
+
     let discounts = "None";
 
-    if (document.getElementById("aaaDiscount").checked)
-    {
+    if (document.getElementById("aaaDiscount").checked) {
         discounts = "AAA";
     }
-    else if (document.getElementById("seniorDiscount").checked)
-    {
+    else if (document.getElementById("seniorDiscount").checked) {
         discounts = "Senior";
     }
-    else if (document.getElementById("militaryDiscount").checked)
-    {
+    else if (document.getElementById("militaryDiscount").checked) {
         discounts = "Military";
     }
-    
+
     let roomCharge = getRoomCost(roomType, 0, numOfNights)
     //if breakfast inluded apply price 
 
@@ -144,8 +141,7 @@ function getEstimate() {
     //Discounts if any
 
     let discountTotal = getDiscount(roomCharge, discounts);
-    if (discounts == "Senior")
-    {
+    if (discounts == "Senior") {
         breakfastCost = 0;
     }
 
@@ -154,8 +150,8 @@ function getEstimate() {
     firstCharge.value = subtotal.toFixed(2);
 
     const discountsOutput = document.getElementById("discountTotal");
-    discountsOutput.value = discountTotal.toFixed(2);    
-    
+    discountsOutput.value = discountTotal.toFixed(2);
+
     let total = subtotal - discountTotal
     //Tax 
 
@@ -172,7 +168,7 @@ function getEstimate() {
 }
 window.onload = function () {
 
-    const btn= document.getElementById("totalPrice");
+    const btn = document.getElementById("totalPrice");
     btn.onclick = getEstimate;
 
 }

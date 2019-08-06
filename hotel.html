@@ -16,23 +16,22 @@
 </head>
 
 <body>
-    <nav
-        class=" font-weight-bold d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <nav class=" font-weight-bold d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <h1 class="title my-0 mr-md-auto font-weight-normal">Our Little Town</h1>
         <div class="my-2 my-md-0 mr-md ">
             <a class="p-2 text-info" href="index.html">Home</a>
             <a class="p-2 text-info" href="rentacar.html">Rent a Car</a>
         </div>
     </nav>
-    <Main class="row no-gutters">
+    <main class="row no-gutters">
         <section class="container col-md-5 offset-md-4 formBorder">
             <h1 class="mb-3 text-center">HOTEL</h1>
             <form class="form " autocomplete="off" method="GET">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-6 mb-4">
-                            <label for="firstName">Check-in Date</label>
-                            <input type="date" class="form-control" id="firstName" value="" required>
+                            <label for="checkInDate">Check-in Date</label>
+                            <input type="date" class="form-control" id="checkInDate" required>
                             <div class="invalid-feedback">
                                 Check-in Date is required
                             </div>
@@ -55,9 +54,6 @@
                                 <option value="KINGSUITE"> King Suite $190</option>
                                 <option value="TWOBED">2-Bedroom Suite $210</option>
                             </select>
-                            <div class="invalid-feedback">
-                                Please select Room Type
-                            </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="numOfAdults"> Adults </label>
@@ -71,6 +67,7 @@
                             <input type="text" class="form-control" id="numOfKids" required>
                         </div>
                     </div>
+                  
                     <hr class="mb-4">
                     <h4 class="mb-3">Breakfast </h4>
                     <p>( $6.96/adult-$3.95/child)</p>
@@ -80,7 +77,8 @@
                         <label class="custom-control-label" for="breakfastIncluded">Yes</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="noBreakfast" name="customRadioInline1" class="custom-control-input" value="false" checked>
+                        <input type="radio" id="noBreakfast" name="customRadioInline1" class="custom-control-input"
+                            value="false" checked>
                         <label class="custom-control-label" for="noBreakfast">No</label>
                     </div>
                     <hr class="mb-4">
@@ -95,22 +93,43 @@
                             <label class="custom-control-label" for="noneDiscount">None</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input id="aaaDiscount" name="discount" type="radio" class="custom-control-input" value="AAA">
+                            <input id="aaaDiscount" name="discount" type="radio" class="custom-control-input"
+                                value="AAA">
                             <label class="custom-control-label" for="aaaDiscount">AAA</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input id="seniorDiscount" name="discount" type="radio" class="custom-control-input" value="Senior"
-                                required>
+                            <input id="seniorDiscount" name="discount" type="radio" class="custom-control-input"
+                                value="Senior" required>
                             <label class="custom-control-label" for="seniorDiscount">Senior</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input id="militaryDiscount" name="discount" type="radio" class="custom-control-input" value="Military">
+                            <input id="militaryDiscount" name="discount" type="radio" class="custom-control-input"
+                                value="Military">
                             <label class="custom-control-label" for="militaryDiscount">Military</label>
                         </div>
                     </div>
                     <button id="totalPrice" class="btn btn btn-outline-primary" type="button">Get Estimate</button>
                     <button type="reset" class="btn btn-outline-danger">Reset</button>
+                    <!-- Alert button!!!! -->
+                    <div class="alert alert-danger my-3" id="messageDiv" role="alert"  >  
+                      </div>
                     <hr class="mb-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label for="checkInDate">Check-in Date</label>
+                            <input type="date" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Check-in Date is required
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label for="checkOut">Check Out</label>
+                            <input type="number" class="form-control" id="checkOut" required>
+                            <div class="invalid-feedback">
+                                Number of nights is required.
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group row">

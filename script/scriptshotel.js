@@ -54,7 +54,7 @@ function getRoomCost(selectedRoomType, checkinDate, numOfNights) {
         }
     }
     // Get Price depending the Room Selected.    
-    let priceOfRoomSelected = selectedRoom.price
+    let priceOfRoomSelected = selectedRoom.price;
     let cost = priceOfRoomSelected * numOfNights;
     //Return Cost of Room Selected
     return cost;
@@ -101,12 +101,32 @@ function getDiscount(roomCostBeforeDiscount, discountCode) {
         return 0;
     }
 }
-function getEstimate() {
 
+/*
+function checkOutDate(checkinDate){
+
+    let msecPerDay=1000*60*60*24;
+    checkout=(checkinDate+(numOfNights*msecPerDay))
+    let leaveDate=new Date(checkout)
+
+}*/
+
+function getEstimate() {
+    let messageDiv= document.getElementById("messageDiv")
+    messageDiv.innerHTML=" ";
+    
     let roomType = document.getElementById("roomType").value
 
     let numOfNights = document.getElementById("numOfNights").value
     numOfNights = parseFloat(numOfNights);
+
+    // Check numNights
+
+    if (numOfNights < 0 ){
+        messageDiv.innerHTML="Number of nights is not a Number"
+        return;
+    }
+
     let numOfAdults = document.getElementById("numOfAdults").value
     numOfAdults = parseFloat(numOfAdults);
     let numOfKids = document.getElementById("numOfKids").value
@@ -159,6 +179,11 @@ function getEstimate() {
     const taxes = document.getElementById("taxTotal");
     taxes.value = tax.toFixed(2);
 
+    /*Checkout Date
+
+    const dates = document.getElementById("checkOut");
+    dates.value = Date.parse(leaveDate); */
+
     //Total 
 
     total = subtotal + tax
@@ -167,7 +192,7 @@ function getEstimate() {
 
 }
 window.onload = function () {
-
+    
     const btn = document.getElementById("totalPrice");
     btn.onclick = getEstimate;
 
